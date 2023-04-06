@@ -1,12 +1,12 @@
 
 
 // create a class MyHomePageModel that extends the Navigation mixin and textfielddata mixin
+import 'package:automateddialog/Helpers/Mixins/Popup.dart';
 import 'package:mobx/mobx.dart';
 import '../Helpers/AppNavigations/NavigationMixin.dart';
-import '../Helpers/Mixins/Textfield.dart';
 part 'HomePageModel.g.dart';
 
-class HomePageModel = _HomePageModelBase with _$HomePageModel, NavigationMixin,Textfielddata;
+class HomePageModel = _HomePageModelBase with _$HomePageModel, NavigationMixin,Popupdata;
 
 abstract class _HomePageModelBase with Store {
 
@@ -37,7 +37,11 @@ abstract class _HomePageModelBase with Store {
   @action
   void setindex({required int indextoshow})
   {
-    indextoshow=index;
+    index=indextoshow;
   }
+  @observable
+  bool status = false;
+  
+
 
 }
